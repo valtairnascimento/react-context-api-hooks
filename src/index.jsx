@@ -1,12 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './styles/global-styles.css';
 
 import { Home } from './templates/Home';
+import { CounterContextProvider } from './contexts/CounterContext';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
+    <CounterContextProvider>
       <Home />
-  </React.StrictMode>,
-  document.getElementById('root'),
+    </CounterContextProvider>
+  </React.StrictMode>
 );
